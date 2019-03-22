@@ -97,7 +97,18 @@ def depth(expr):
 # Problem 2.3: Tree indexing
 
 def tree_ref(tree, index):
-    raise NotImplementedError
+
+    for i in index:
+
+        try:
+            tree = tree[i]
+        except Exception as err:
+            print(err)
+            print("cur tree: \t" + str(tree))
+            print("req idx: \t" + str(i))
+            return []
+
+    return tree
 
 
 # Section 3: Symbolic algebra
